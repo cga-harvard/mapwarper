@@ -13,7 +13,7 @@ Ext.namespace('Ext.ux.form');
   *
   * @author    Ing. Jozef Sakalos
   * @copyright (c) 2008, Ing. Jozef Sakalos
-  * @version $Id: Ext.ux.form.DateTime.js 645 2008-01-27 21:53:01Z jozo $
+  * @version $Id: DateTimeField.js,v 1.1.1.1 2012/02/24 18:46:40 mbertra Exp $
   *
   * @class Ext.ux.form.DateTime
   * @extends Ext.form.Field

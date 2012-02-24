@@ -1,12 +1,15 @@
 {"root": [
 {"id": "brick", "label": "Brick"},
+{"id": "marble", "label": "Marble"},
 {"id": "stone", "label": "Stone"},
+{"id": "steel", "label": "Steel"},
+{"id": "abobe", "label": "Adobe"},
 {"id": "brick or stone", "label": "Brick or Stone"},
 {"id": "brick & stone front", "label": "Brick & Stone Front"},
+{"id": "brick & iron front", "label": "Brick & Iron Front"},
 {"id": "wood & brick front", "label": "Wood & Brick front"},
 {"id": "iron covered building", "label": "Iron Covered Building"},
 {"id": "brick stable", "label": "Brick Stable"},
 {"id": "wood stable", "label": "Wood Stable"},
-{"id": "steel", "label": "Steel"},
 {"id": "unknown", "label": "Unknown"}
 ]}

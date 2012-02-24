@@ -1,13 +1,13 @@
 # Settings specified here will take precedence over those in config/environment.rb
-SITE_URL = "beta.mapwarper.net"
+SITE_URL = "cga-dev.entropyfree.com"
 SITE_NAME = "map warper"
-SITE_EMAIL = "robot@mapwarper.net"
+SITE_EMAIL = "robot@cga.entropyfree.com"
 MAPSERVER_URL = "/mapserv"  #url to the mapserv executable
 
 #paths to directories to put various files in
-#SRC_MAPS_DIR = "/var/lib/maps/src/"
-#DEST_MAPS_DIR = "/var/lib/maps/maps/dest/"
-#TILEINDEX_DIR = "/var/lib/maps/dest/tileindex/"
+SRC_MAPS_DIR = "/home/twaters/var/lib/maps/src/"
+DEST_MAPS_DIR = "/home/twaters/var/lib/maps/dest/"
+TILEINDEX_DIR = "/home/twaters/var/lib/maps/dest/tileindex/"
 
 #MAX_DIMENSION =  1500
 #MAX_ATTACHMENT_SIZE = 100.megabytes
@@ -15,7 +15,7 @@ MAPSERVER_URL = "/mapserv"  #url to the mapserv executable
 #
 #for staging.mapwarper.net ABQIAAAAUs2kl_uF_gYL9qSq4yukexSgEqVDyz1BzXtcs2sjYKHX7Ct09xQKZPVFb7DDwZR1l3CCS6uyv18asQ
 #for beta.mapwarper.net
-GOOGLE_MAPS_KEY="ABQIAAAAUs2kl_uF_gYL9qSq4yukexRxkxcYXm5XhASGm0Epb0TXzVu4RRQ76q3JFV3Uf57gZY19BEkCZK2xBA"
+GOOGLE_MAPS_KEY="ABQIAAAAUs2kl_uF_gYL9qSq4yukexT_ra-DfPvlYnSr9uVSE8yQEUfNcxRnxUMWd6I1MVX4_goTBGkNRaKMxw"
 # In the development environment your application's code is reloaded on
 # every request.  This slows down response time but is perfect for development
 # since you don't have to restart the webserver when you make code changes.
@@ -39,7 +39,7 @@ config.action_mailer.raise_delivery_errors = false
 #GDAL_PATH  = "/home/tim/bin/FWTools-2.0.6/bin_safe/"
 GDAL_PATH  = ""
 GOOGLE_ANALYTICS_CODE = "UA-12240034-2"
-GOOGLE_ANALYTICS_COOKIE_PATH = "/warper-dev/"
+GOOGLE_ANALYTICS_COOKIE_PATH = "/cgawarper/"
 Yahoo_app_id = "lbQ2VNLV34EoEmxF9dguamWEFSXjI7adJ.ACHkdChT2JGmQ0Bj.jP1cF0nmh5XP3"
 ADDTHIS_USER = "timwaters"
 ADDTHIS_TWITTER_USER = "mapwarper"

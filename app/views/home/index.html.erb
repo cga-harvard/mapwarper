@@ -2,24 +2,16 @@
 
 <div id="left-col">
 <div id="video-intro"><h2>Overview</h2>
- Find maps and other imagery, upload, and rectify against a real map.<br />
- You can then download and use the rectified map in your mapping applications.<br />
- Just sign up and you can start uploading and get warping!
-  <h4>
-  <%= link_to "Upload Map!", new_map_path -%>
-  </h4>
+  <p>Welcome to WorldMap WARP, a tool based on the <a href="https://github.com/timwaters/mapwarper">MapWarper</a> platform being developed by <a href="http://entropyfree.com">Entropy Free</a>.  The tool is for digitally aligning (geo-rectifying) scanned historical maps to match today’s precise maps.  Visitors can browse maps others have geo-rectified or upload their own to rectify.  Any map which has been rectified here can be brought into WorldMap by following the instructions under Section 3.9.1 in <a href="http://worldmap.harvard.edu/site_media/docs/WorldMap_Help.pdf" target="_blank">WorldMap Help</a>.</p>
 </div>
 
+<!--
 <div>
 <h2>What is it?</h2>
-<p>It's a free to use, open source map warper / map georectifier, it's a bit unstable! This project is supported by <a href="http://entropyfree.com">Entropy Free</a> and the <a href="http://maps.nypl.org">New York Public Library</a>.
-</p><p>
-Note: This has been migrated from it's old home at <a href="warper.geothings.net">warper.geothings.net</a> .
-It's now running much faster and previous limits about file sizes and image dimensions have been raised much higher!
-<br />
-Mail me at tim@geothings.net for more information!
+<p>It's a free to use, open source map warper / map georectifier. This project is supported by <a href="http://entropyfree.com">Entropy Free</a> and The <a href="http://gis.hardvard.edu">Center for Geographic Analysis (CGA)</a> at Harvard University.
 </p>
 </div>
+-->
 <div id="tag-cloud">
   <h4 class="smaller">Tags</h4>
   <% tag_cloud @tags, %w(css1 css2 css3 css4) do |tag, css_class| %>
@@ -112,7 +104,6 @@ Mail me at tim@geothings.net for more information!
     <%= render :partial => 'layers/layer', :collection => @layers unless @layers.nil? %>
   </table>
 <%= link_to "View all Layers", layers_path %><br />
-<%= link_to "Create a new layer", new_layer_path %>
 </div>
 
 </div>

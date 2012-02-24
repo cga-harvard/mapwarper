@@ -1,9 +1,10 @@
 {"root": [
 {"id": 1, "label": "Residential"},
-{"id": 2, "label": "Worship"},
+{"id": 2, "label": "Religious"},
 {"id": 3, "label": "Educational"},
-{"id": 4, "label": "Industrial"},
-{"id": 5, "label": "Health"},
-{"id": 6, "label": "Transport"},
-{"id": 7, "label": "Military"}
+{"id": 4, "label": "Commercial"},
+{"id": 5, "label": "Industrial"},
+{"id": 6, "label": "Health"},
+{"id": 7, "label": "Transport"},
+{"id": 8, "label": "Military"}
 ]}

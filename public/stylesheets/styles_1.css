@@ -311,14 +311,17 @@ a:hover {
 }
 
 h1 {
-	background: url(/images/header_logo.png) 0 50% scroll no-repeat;
-	padding: 8px 0 7px 60px !important;
+	background: url(/images/WorldMap-Logo_26px.png) 0 50% scroll no-repeat;
+	padding: 10px 0 7px 45px !important;
 	margin: 10px 1em !important;
-    font-size: 2em !important;
+    font-size: 1em !important;
 }
 
 h1 a, h1 a:link, h1 a:visited {
 	color: #000;
+}
+h1 a{
+margin-left: 100px;
 }
 
 p {
@@ -382,7 +385,7 @@ font-weight: strong;
 .headerDiv {
 	position: relative;
 	margin: 0 !important;
-	background: #e2dedb url(/images/header_bg.jpg) 0 -30px scroll;
+	background: #FFF;
 	padding: 1px 0 0 0 !important;;
 }
 
@@ -397,7 +400,8 @@ h1 span {
 	text-align: right;
 }
 .headerDiv .user_status a {
-	background: #e3e3d4;
+	//background: #e3e3d4;
+        color: #1A4EA3;
 	font-weight: bold;
 	padding: 0 3px 3px  !important;;
 }
@@ -675,6 +679,9 @@ font-weight: bold;
 	padding: 1em;
 	margin: 1em 0;
 	border-top: 1px solid #5e564b;
+}
+img.footer_image {
+vertical-align: bottom;
 }
 .star
 {

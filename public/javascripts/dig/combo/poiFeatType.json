@@ -6,11 +6,18 @@
 {"id": "Post Office", "label": "Post Office"},
 {"id": "Courthouse", "label": "Courthouse"},
 {"id": "Church", "label": "Church"},
-{"id": "Cemetary", "label": "Cemetary"},
+{"id": "Cemetery", "label": "Cemetery"},
+{"id": "Salon", "label": "Salon"},
+{"id": "Chateau", "label": "Château"},
 {"id": "School", "label": "School"},
-{"id": "Other Use", "label": "Other Use (see name field)"},
 {"id": "Railhead/Depot", "label": "Railhead / Depot"},
 {"id": "Ferry Landing", "label": "Ferry Landing"},
 {"id": "Toll Gate", "label": "Toll Gate"},
-{"id": "Military Base", "label": "Military Base"}
+{"id": "Military Base", "label": "Military Base"},
+{"id": "Mine", "label": "Mine"},
+{"id": "Camp", "label": "Camp"},
+{"id": "Union Office", "label": "Union Office"},
+{"id": "Lighthouse", "label": "Lighthouse"},
+{"id": "Ruins", "label": "Ruins"},
+{"id": "Other Use", "label": "Other Use (see name field)"}
 ]}

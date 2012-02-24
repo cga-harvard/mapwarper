@@ -1,9 +1,14 @@
 # Email settings
-ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.delivery_method = :sendmail
 ActionMailer::Base.smtp_settings = {
-  :address => "mail.geothings.net",
+  :address => "warp.worldmap.harvard.edu",
   :port => 25,
-  :domain => "warper.geothings.net",
-  :username => ""
+  :domain => "warp.worldmap.harvard.edu"
 
 }
+
+#New stuff
+#ActionMailer::Base.sendmail_settings = {
+#  :location       => '/usr/sbin/sendmail',
+#  :arguments      => '-i -t -f support@warp.worldmap.harvard.edu'
+#}

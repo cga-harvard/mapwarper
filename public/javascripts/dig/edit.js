@@ -1,3 +1,4 @@
+//CGA digitizer code
 //OpenLayers.ProxyHost = "/cgi-bin/proxy.cgi?url=";
 // reference local blank image
 //Ext.BLANK_IMAGE_URL = 'mfbase/ext/resources/images/default/s.gif';
@@ -81,16 +82,11 @@ Ext.onReady(function() {
       }
     }
 
-
-    var buildMaterialsUrl = jsPath + "dig/combo/buildMaterials.json";
+   var buildMaterialsUrl = jsPath + "dig/combo/buildMaterials.json";
     var buildUseTypeUrl = jsPath + "dig/combo/buildUseType2.json";
     var buildUseSubTypeUrl = subtypeURL; //the queryable url that fetches the subtypes ?query=Health 
     var buildLayerProps = [
-    // new mapfish.widgets.editing.StringProperty(
-    //   {name: 'created_at', showInGrid: false, extFieldCfg: {hidden: true, hideLabel: true}}),
-    //new mapfish.widgets.editing.StringProperty(
-    //    {name: 'updated_at', showInGrid: false, extFieldCfg: {hidden: true, hideLabel: true}}),
-    new mapfish.widgets.editing.StringProperty(
+     new mapfish.widgets.editing.StringProperty(
       {name: 'name', label: 'Name', showInGrid: true}),
     new mapfish.widgets.editing.StringProperty(
       {name: 'number', label: 'Number', showInGrid: true}),
@@ -112,7 +108,7 @@ Ext.onReady(function() {
       {name: 'layer_year', showInGrid: false, extFieldCfg: {hidden: true, hideLabel: true}})
     ];
 
-    var districtFeatTypeUrl = jsPath +"dig/combo/districtFeatType.json?";
+	  var districtFeatTypeUrl = jsPath +"dig/combo/districtFeatType.json?";
     var districtZoningUrl = jsPath + "dig/combo/districtZoning.json?";
     var districtCountyUrl = jsPath + "dig/combo/districtType.json";
     var districtLayerProps = [
@@ -175,7 +171,6 @@ Ext.onReady(function() {
     ];
 
 
-
     var hydroFeatTypeUrl = jsPath + "dig/combo/hydroFeatType.json";
     var hydroLayerProps =  [
     new mapfish.widgets.editing.StringProperty(
@@ -205,7 +200,7 @@ Ext.onReady(function() {
     //NOTE do we want to hide some of these in the editor grid?
     //{name: 'BuildType', showInGrid: true, extFieldCfg: {disabled: true, hidden: true, hideLabel: true}})
 
-    var layerConfig = {
+   var layerConfig = {
       buildpolygons: {
         text: 'Buildings',
         projection: new OpenLayers.Projection("EPSG:4326"),
@@ -215,8 +210,8 @@ Ext.onReady(function() {
             version: "1.1.0",
             srsName: "EPSG:4326",
             url: geoserverURL,
-            featurePrefix: "nyplv",
-            featureNS: "http://maps.nypl.org/v/gml/",
+            featurePrefix: "cga",
+            featureNS: "http://cga.entropyfree.com/gml/",
             featureType: "buildings",
             geometryName: "geom",
             projection: 'epsg:4326'
@@ -237,8 +232,8 @@ Ext.onReady(function() {
             version: "1.1.0",
             srsName: "EPSG:4326",
             url: geoserverURL,
-            featurePrefix: "nyplv",
-            featureNS: "http://maps.nypl.org/v/gml/",
+            featurePrefix: "cga",
+            featureNS: "http://cga.entropyfree.com/gml/",
             featureType: "districts",
             geometryName: "geom",
             projection: 'epsg:4326'
@@ -250,7 +245,7 @@ Ext.onReady(function() {
           properties: districtLayerProps
         }
       },
-      poipoints: {
+			poipoints: {
         text: 'Points of Interest',
         filter: getUserFilter(),
         autoLoadLayer: 'true',
@@ -259,8 +254,8 @@ Ext.onReady(function() {
             version: "1.1.0",
             srsName: "EPSG:4326",
             url: geoserverURL,
-            featurePrefix: "nyplv",
-            featureNS: "http://maps.nypl.org/v/gml/",
+            featurePrefix: "cga",
+            featureNS: "http://cga.entropyfree.com/gml/",
             featureType: "points_of_interest",
             geometryName: "geom",
             projection: 'epsg:4326'
@@ -281,8 +276,8 @@ Ext.onReady(function() {
             version: "1.1.0",
             srsName: "EPSG:4326",
             url: geoserverURL,
-            featurePrefix: "nyplv",
-            featureNS: "http://maps.nypl.org/v/gml/",
+            featurePrefix: "cga",
+            featureNS: "http://cga.entropyfree.com/gml/",
             featureType: "transport",
             geometryName: "geom",
             projection: 'epsg:4326'
@@ -294,7 +289,7 @@ Ext.onReady(function() {
           properties: transportLayerProps
         }
       },
-      hydrolines: {
+     hydrolines: {
         text: 'Hydrography',
         filter: getUserFilter(),
         autoLoadLayer: 'true',
@@ -303,8 +298,8 @@ Ext.onReady(function() {
             version: "1.1.0",
             srsName: "EPSG:4326",
             url: geoserverURL,
-            featurePrefix: "nyplv",
-            featureNS: "http://maps.nypl.org/v/gml/",
+            featurePrefix: "cga",
+            featureNS: "http://cga.entropyfree.com/gml/",
             featureType: "hydrography",
             geometryName: "geom",
             projection: 'epsg:4326'
@@ -318,6 +313,12 @@ Ext.onReady(function() {
       }
 
     };
+
+    
+   
+
+
+
 
     var fePanel = new mapfish.widgets.editing.FeatureEditingPanel({
         title: 'Edit and Add New Features',

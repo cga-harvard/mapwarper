@@ -1,6 +1,6 @@
 {"root": [
 {"id": "Residential", "label": "Residential"},
-{"id": "Worship", "label": "Worship"},
+{"id": "Religious", "label": "Religious"},
 {"id": "Educational", "label": "Educational"},
 {"id": "Commercial", "label" : "Commercial"},
 {"id": "Industrial", "label": "Industrial"},

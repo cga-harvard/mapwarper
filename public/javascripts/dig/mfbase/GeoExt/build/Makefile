@@ -1,6 +1,6 @@
 # Makefile for GeoExt
 
-VERSION = r$(shell echo '$$Revision: 1158 $$' | tr -d "[:alpha:]$$ :")
+VERSION = r$(shell echo '$$Revision: 1.1.1.1 $$' | tr -d "[:alpha:]$$ :")
 LIB_NAME = GeoExt
 ZIP_NAME = $(LIB_NAME)-$(VERSION).zip
 

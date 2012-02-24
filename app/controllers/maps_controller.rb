@@ -4,6 +4,7 @@ class MapsController < ApplicationController
   before_filter :login_or_oauth_required, :only => [:new, :create, :edit, :update, :destroy, :delete, :warp, :rectify, :clip, :align,
  :warp_align, :mask_map, :delete_mask, :save_mask, :save_mask_and_warp, :set_rough_state, :set_rough_centroid ]
   before_filter :check_administrator_role, :only => [:publish]
+  #before_filter :check_administrator_role, :only => [:new, :create, :edit, :update, :destroy, :delete]
   before_filter :find_map_if_available,
     :except => [:show, :index, :wms, :tile, :mapserver_wms, :warp_aligned, :status, :new, :create, :update, :edit, :tag, :geosearch]
 
@@ -100,8 +101,9 @@ class MapsController < ApplicationController
     sort_init 'updated_at'
     sort_update
 
-    extents = [-74.1710,40.5883,-73.4809,40.8485] #NYC
+    #extents = [-74.1710,40.5883,-73.4809,40.8485] #NYC
 
+    extents = [-136.9, -41.508577296073, 136, 70] # world
     #TODO change to straight javascript call.
     if params[:place] && !params[:place].blank?
       place_query = params[:place]

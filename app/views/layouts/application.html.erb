@@ -12,6 +12,7 @@
     <%= javascript_include_tag "jquery-1.3.2.min.js" %>
     <%= javascript_include_tag "jquery-ui-1.7.custom.min.js" %>
     <%= javascript_include_tag "jquery.pageless.js" %>
+    <%= javascript_include_tag "jquery.simplemodal.1.4.2.min.js" %>
     <%= javascript_tag "jQuery.noConflict();" -%>
     <%# TODO install jrails and get rid of prototype -%>
     <%= javascript_include_tag "prototype" %>
@@ -33,7 +34,7 @@
           <body>
           <%end%>
           <div id="headerDiv" class="headerDiv">
-            <h1><%= link_to "Map Warper <span>beta</span>", root_path %></h1>
+            <h1><%= link_to "WARP", root_path %></h1>
             <%= render :partial => 'shared/header' %>
             <%= render :partial => 'shared/nav' %>
           </div>

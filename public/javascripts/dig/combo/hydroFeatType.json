@@ -4,7 +4,12 @@
 {"id": "River", "label": "River"},
 {"id": "Canal", "label": "Canal"},
 {"id": "Lake/Pond", "label": "Lake / Pond"},
+{"id": "Ocean", "label": "Ocean"},
 {"id": "Reservoir", "label": "Reservoir"},
+{"id": "Sea", "label": "Sea"},
 {"id": "Delta/Estuary", "label": "Delta / Estuary"},
+{"id": "Watershed", "label": "Watershed"},
+{"id": "Surface Water", "label": "Surface Water"},
+{"id": "Aquifer", "label": "Aquifer"},
 {"id": "unknown", "label": "Unknown"}
 ]}

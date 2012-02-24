@@ -1,9 +1,11 @@
 {"root": [
+{"id": "Shipping Route", "label": "Shipping Route"},
+{"id": "Postal Route", "label": "Postal Route"},
+{"id": "Railway", "label": "Railway"},
 {"id": "Thoroughfare", "label": "Thoroughfare"},
 {"id": "Street", "label": "Street"},
 {"id": "Highway", "label": "Highway"},
 {"id": "Tunnel", "label": "Tunnel"},
-{"id": "Railway", "label": "Railway"},
 {"id": "Ferry Route", "label": "Ferry Route"},
 {"id": "Right of Way", "label": "Right of Way"},
 {"id": "unknown", "label": "Unknown"}

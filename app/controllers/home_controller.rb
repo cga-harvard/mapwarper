@@ -28,8 +28,8 @@ class HomeController < ApplicationController
   def get_news_feeds
   when_fragment_expired 'news_feeds', 1.day.from_now do
     logger.info "getting news feed"
-    @feeds = RssParser.run("http://thinkwhere.wordpress.com/tag/mapwarper/feed/")
-    @feeds = @feeds[:items][0..1]
+    @feeds = RssParser.run("http://www.gis.harvard.edu/icb/feed/rss/k235/icb.topic282817/rss.xml")
+    @feeds = @feeds[:items][0..2]
   end
 end
 

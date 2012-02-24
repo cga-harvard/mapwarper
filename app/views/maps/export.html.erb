@@ -1,6 +1,11 @@
 <h2>Map</h2>
 <ul>
-  <li>
+				<li>Original File: <%= link_to @map.upload.original_filename, @map.upload.url %> 
+	</li>
+	</ul>
+	
+	<ul>
+	<li>
     GeoTiff: <%= link_to  "Download rectified GeoTiff", export_map_url(:id => @map, :format => :tif) %>
   </li>
   <li>

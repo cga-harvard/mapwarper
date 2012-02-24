@@ -123,11 +123,11 @@ class Map < ActiveRecord::Base
 
       self.filename = tiffed_filename
       #now delete the original
-      logger.debug "Deleting uploaded file, now it's a usable tif"
-      if File.exists?(self.upload.path)
-        logger.debug "deleted uploaded file"
-        File.delete(self.upload.path)
-      end
+      #logger.debug "Deleting uploaded file, now it's a usable tif"
+      #if File.exists?(self.upload.path)
+      #  logger.debug "deleted uploaded file"
+      #  File.delete(self.upload.path)
+      #end
       
     end
     self.map_type = :is_map
@@ -173,10 +173,6 @@ class Map < ActiveRecord::Base
         layer.update_counts
       end
     end
-  end
-
-  def update_gcp_touched_at
-      self.touch(:gcp_touched_at)
   end
 
 
@@ -584,7 +580,8 @@ class Map < ActiveRecord::Base
     memory_limit =  (defined?(GDAL_MEMORY_LIMIT)) ? "-wm "+GDAL_MEMORY_LIMIT.to_s :  ""
 
     #check for colorinterop=pal ? -disnodata 255 or -dstalpha
-    command = "#{GDAL_PATH}gdalwarp #{memory_limit}  #{transform_option}  #{resample_option} -dstalpha #{mask_options} -s_srs 'EPSG:4326' #{temp_filename}.vrt #{dest_filename} -co TILED=YES -co COMPRESS=JPEG -co JPEG_QUALITY=85"
+    #command = "#{GDAL_PATH}gdalwarp #{memory_limit}  #{transform_option}  #{resample_option} -dstalpha #{mask_options} -s_srs 'EPSG:4326' #{temp_filename}.vrt #{dest_filename} -co TILED=YES -co COMPRESS=JPEG -co JPEG_QUALITY=85"
+    command = "#{GDAL_PATH}gdalwarp #{memory_limit}  #{transform_option}  #{resample_option} -dstalpha #{mask_options} -s_srs 'EPSG:4326' #{temp_filename}.vrt #{dest_filename} -co TILED=YES"
     w_stdin, w_stdout, w_stderr = Open3::popen3(command)
     logger.info command
 
@@ -626,7 +623,6 @@ class Map < ActiveRecord::Base
          spawn do
            convert_to_png
          end
-      self.touch(:rectified_at)
     else
       self.status = :available
     end

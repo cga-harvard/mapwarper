@@ -9,10 +9,15 @@ class DigitizeController < ApplicationController
     subtypes = [
       {"parentType" => "Residential", "id" => "Apartments", "label" => "Apartments"},
       {"parentType" => "Residential", "id" =>  "Houses", "label" => "Houses"},
-      {"parentType" => "Worship", "id" => "Church", "label" => "Church"},
-      {"parentType" => "Worship", "id" => "Synagogue", "label" => "Synagogue"},
+      {"parentType" => "Residential", "id" =>  "Manor", "label" => "Manor"},
+      {"parentType" => "Religious", "id" => "Church", "label" => "Church"},
+      {"parentType" => "Religious", "id" => "Synagogue", "label" => "Synagogue"},
+      {"parentType" => "Religious", "id" => "Mosque", "label" => "Mosque"},
+      {"parentType" => "Religious", "id" => "Mission", "label" => "Mission"},
+      {"parentType" => "Religious", "id" => "Chapel", "label" => "Chapel"},
       {"parentType" => "Educational", "id" => "School", "label" => "School"},
       {"parentType" => "Educational", "id" => "Library", "label" => "Library"},
+      {"parentType" => "Educational", "id" => "University", "label" => "University"},
       {"parentType" => "Commercial", "id" => "Hotel", "label" => "Hotel"},
       {"parentType" => "Commercial", "id" => "Bank", "label" => "Bank"},
       {"parentType" => "Commercial", "id" => "Shop", "label" => "Shop"},
@@ -37,9 +42,7 @@ class DigitizeController < ApplicationController
       {"parentType" => "Industrial", "id" => "Rope Walk", "label" => "Rope Walk"},
       {"parentType" => "Industrial", "id" => "Slaughter House", "label" => "Slaughter House"},
       {"parentType" => "Health", "id" => "Hospital", "label" => "Hospital"},
-      {"parentType" => "Health", "id" => "Asylum Insane", "label" => "Asylum (Insane)"},
-      {"parentType" => "Health", "id" => "Asylum Inebriate", "label" => "Asylum (Inebriate)"},
-      {"parentType" => "Health", "id" => "Asylum Orphan", "label" => "Asylum (Orphan)"},
+      {"parentType" => "Health", "id" => "Asylum", "label" => "Asylum "},
       {"parentType" => "Health", "id" => "Almshouse", "label" => "Almshouse"},
       {"parentType" => "Health", "id" => "Quarantine", "label" => "Quarantine"},
       {"parentType" => "Health", "id" => "Sanatorium", "label" => "Sanatorium"},
@@ -52,7 +55,8 @@ class DigitizeController < ApplicationController
       {"parentType" => "Transport", "id" => "Docks", "label" => "Docks"},
       {"parentType" => "Military", "id" => "Armory", "label" => "Armory"},
       {"parentType" => "Military", "id" => "Battery", "label" => "Battery"},
-      {"parentType" => "Military", "id" => "Fortification", "label" => "Fortification"}
+      {"parentType" => "Military", "id" => "Fortification", "label" => "Fortification"},
+      {"parentType" => "Military", "id" => "Fort", "label" => "Fort"}
 
     ]
    

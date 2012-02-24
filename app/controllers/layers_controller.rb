@@ -3,7 +3,7 @@ class LayersController < ApplicationController
 
   layout 'layerdetail', :only => [:show,  :edit, :export, :metadata]
   before_filter :login_or_oauth_required , :except => [:wms, :wms2, :show_kml, :show, :index, :metadata, :maps, :thumb, :geosearch, :comments, :tile]
-  before_filter :check_administrator_role, :only => [:publish, :toggle_visibility, :merge] # :remove_map, :update_year, :update, :destroy, :create
+  before_filter :check_administrator_role, :only => [:publish, :toggle_visibility, :merge, :remove_map, :update_year, :update, :destroy, :create, :new]
   before_filter :find_layer, :only => [:show, :export, :metadata, :digitize, :toggle_visibility, :update_year, :publish, :remove_map, :merge, :maps, :thumb, :comments]
   before_filter :check_if_layer_is_editable, :only => [:edit, :update, :remove_map, :update_year, :update, :destroy]
 
@@ -32,8 +32,8 @@ class LayersController < ApplicationController
     sort_init 'updated_at'
     sort_update
 
-    extents = [-74.1710,40.5883,-73.4809,40.8485] #NYC
-
+    #extents = [-74.1710,40.5883,-73.4809,40.8485] #NYC
+    extents = [-136.9, -41.508577296073, 136, 70] # world
     #TODO change to straight javascript call.
     if params[:place] && !params[:place].blank?
       place_query = params[:place]

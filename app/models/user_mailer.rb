@@ -39,5 +39,7 @@ class UserMailer < ActionMailer::Base
       @subject     = "Map Warper - "
       @sent_on     = Time.now
       @body[:user] = user
+      headers        "Reply-to" => "#{SITE_EMAIL}"
+      @content_type = "text/html"
     end
 end
