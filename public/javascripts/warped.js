@@ -28,6 +28,7 @@ function warpedinit(){
     mapnik3 = mapnik.clone();
     warpedmap.addLayer(mapnik3);
 
+
     for (var i =0; i < layers_array.length;i++){
         warpedmap.addLayer(get_map_layer(layers_array[i]));
     }
@@ -47,8 +48,15 @@ function warpedinit(){
    warped_wmslayer.setIsBaseLayer(false);
    warpedmap.addLayer(warped_wmslayer);
 
-   jpl_wms3 = jpl_wms.clone();
-   warpedmap.addLayer(jpl_wms3);
+   //jpl_wms3 = jpl_wms.clone();
+   //warpedmap.addLayer(jpl_wms3);
+
+   googleSat3 = googleSat.clone();
+   googleMaps3 = googleMaps.clone();
+   googleHybrid3 = googleHybrid.clone();
+   dituStreet3 = dituStreet.clone();
+   
+   warpedmap.addLayers([googleSat,googleMaps,googleHybrid,dituStreetOA]);
 
    clipmap_bounds_merc  = warped_bounds.transform(warpedmap.displayProjection, warpedmap.projection);
 
@@ -58,6 +66,10 @@ function warpedinit(){
     jQuery("#slider").slider({
         value: 100 * opacity,
         range: "min",
+
+
+
+
         slide: function(e, ui) {
             warped_wmslayer.setOpacity(ui.value / 100);
             OpenLayers.Util.getElement('opacity').value = ui.value;

@@ -72,3 +72,52 @@ var googleSat = new OpenLayers.Layer.Google( "Google Satellite", {type: G_SATELL
 var googleMaps = new OpenLayers.Layer.Google( "Google Streets", { 'sphericalMercator': true});
 var googleHybrid = new OpenLayers.Layer.Google("Google Hybrid", {type: G_HYBRID_MAP, 'sphericalMercator': true});
 
+
+
+  var dituProj = new google.maps.MercatorProjection(20);
+
+  dituProj.fromLatLngToPixel = function(latlng, zoom) {
+    //newLatLng = new google.maps.LatLng(latlng.lat() + 0.00143, latlng.lng() + 0.00613);
+    //newLatLng = new google.maps.LatLng(latlng.lat(), latlng.lng());
+    //return (G_NORMAL_MAP.getProjection()).fromLatLngToPixel(newLatLng, zoom);
+    return (G_NORMAL_MAP.getProjection()).fromLatLngToPixel(latlng, zoom);
+  }
+
+  dituProj.fromPixelToLatLng = function(pixel, zoom, unbounded) {
+    if (isNaN(pixel.x) || isNaN(pixel.x)) {
+      // En caso de llamada con parametros incorrectos!
+      alert("Pixel: " + pixel + ", zoom: " + zoom + ", unbounded: " + unbounded);
+      return map.getCenter();
+    }
+    var dituLatLng;
+    if (unbounded === undefined) {
+      dituLatLng = (G_NORMAL_MAP.getProjection()).fromPixelToLatLng(pixel, zoom);
+    }
+    else {
+      dituLatLng = (G_NORMAL_MAP.getProjection()).fromPixelToLatLng(pixel, zoom, unbounded);
+    }
+    //newLatLng = new google.maps.LatLng(dituLatLng.lat() - 0.00143, dituLatLng.lng() - 0.00613);
+    newLatLng = new google.maps.LatLng(dituLatLng.lat());
+
+    return newLatLng;
+  }
+
+
+  dituGetTileUrl = function(a, b){
+    //b = this.maxResolution() - b;
+    b = b;
+   
+    var server = (a.x + a.y) % 4;
+    //return "http://mt" + server + ".google.cn/mt?v=cn1.0&hl=zh-CN&x=" + a.x + "&y=" + a.y + "&zoom=" + b;
+    return "http://mt" + server + ".google.cn/vt/lyrs=m@170000000&hl=zh-CN&x=" + a.x + "&y=" + a.y + "&z=" + b + "&s=Galil";
+  } 
+  
+
+  var tilelayers = [new google.maps.TileLayer(new google.maps.CopyrightCollection("Map: http://ditu.google.cn"), 1, 20)];
+  tilelayers[0].getTileUrl = dituGetTileUrl;
+  tilelayers[0].getCopyright = function(a,b) {
+    return {prefix:"Map: ", copyrightTexts:["http://ditu.google.cn"]};
+  }
+  
+  var dituMap = new google.maps.MapType(tilelayers, dituProj, "DITU", {errorMessage:"Error loading images from Google DITU"});
+var dituStreet = new OpenLayers.Layer.Google( "China Streets", {type:dituMap, 'sphericalMercator': true});
