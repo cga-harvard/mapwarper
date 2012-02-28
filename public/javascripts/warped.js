@@ -51,12 +51,7 @@ function warpedinit(){
    //jpl_wms3 = jpl_wms.clone();
    //warpedmap.addLayer(jpl_wms3);
 
-   googleSat3 = googleSat.clone();
-   googleMaps3 = googleMaps.clone();
-   googleHybrid3 = googleHybrid.clone();
-   dituStreet3 = dituStreet.clone();
-   
-   warpedmap.addLayers([googleSat,googleMaps,googleHybrid,dituStreetOA]);
+   warpedmap.addLayers([googleMaps,googleHybrid,googleSat]);
 
    clipmap_bounds_merc  = warped_bounds.transform(warpedmap.displayProjection, warpedmap.projection);
 

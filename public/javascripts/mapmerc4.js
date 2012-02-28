@@ -78,7 +78,7 @@ function init() {
     }
 
 
-    to_map.addLayers([googleSat,googleMaps,googleHybrid,dituStreet]);
+    to_map.addLayers([googleMaps,googleHybrid,googleSat]);
 
 
 

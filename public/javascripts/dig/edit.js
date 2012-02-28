@@ -47,7 +47,7 @@ Ext.onReady(function() {
     digextent = refLayerBounds.transform(map.displayProjection, map.projection);
     var extent = digextent;
 
-    map.addLayers([mapnik_d,googleSat,googleHybrid,googleMaps,dituStreet]);
+    map.addLayers([mapnik_d,googleMaps,googleHybrid,googleSat]);
 
     map.addLayer(refLayer);
 

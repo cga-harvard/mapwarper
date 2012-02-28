@@ -72,7 +72,9 @@ var googleSat = new OpenLayers.Layer.Google( "Google Satellite", {type: G_SATELL
 var googleMaps = new OpenLayers.Layer.Google( "Google Streets", { 'sphericalMercator': true});
 var googleHybrid = new OpenLayers.Layer.Google("Google Hybrid", {type: G_HYBRID_MAP, 'sphericalMercator': true});
 
-
+/*********************************************************/
+/* Code for displaying Ditu/China version of Google Maps */
+/*********************************************************/
 
   var dituProj = new google.maps.MercatorProjection(20);
 
@@ -119,5 +121,5 @@ var googleHybrid = new OpenLayers.Layer.Google("Google Hybrid", {type: G_HYBRID_
     return {prefix:"Map: ", copyrightTexts:["http://ditu.google.cn"]};
   }
   
-  var dituMap = new google.maps.MapType(tilelayers, dituProj, "DITU", {errorMessage:"Error loading images from Google DITU"});
+var dituMap = new google.maps.MapType(tilelayers, dituProj, "DITU", {errorMessage:"Error loading images from Google DITU"});
 var dituStreet = new OpenLayers.Layer.Google( "China Streets", {type:dituMap, 'sphericalMercator': true});
