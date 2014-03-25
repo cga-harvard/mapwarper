@@ -1,13 +1,18 @@
-<% form_tag url_for(:controller => "maps"), :id=>"searchform",:name=> "searchform", :method => :get do -%>
-  Search  
+<script type="text/javascript">
+        function striptags() {
+                $("query").value = $("query").value.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
+        }
+</script>
+<% form_tag url_for(:controller => "maps"), :id=>"searchform",:name=> "searchform", :onSubmit=>"striptags()", :method => :get do -%>
+  Search
  <select id="field" name="field">
-    <%= options_for_select([ ["Title", "title"], 
-                           ["Description", "description"], 
+    <%= options_for_select([ ["Title", "title"],
+                           ["Description", "description"],
                            ["Publisher", "publisher"],
                            ["Author", "authors"],
                             ["Tags", "tags"]], @field)-%>
     </select>
-  for 
+  for
   <%= text_field_tag 'query', @query -%>
   <input type="submit" value=" Go ">
   <% if @show_warped == "1" -%>
